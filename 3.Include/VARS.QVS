@@ -1,0 +1,16 @@
+//Paths de Script
+set vPathInclude = 'lib://CENIPA/3.Include';
+​
+​
+// Paths de estrutura
+set vPathProjeto    = 'lib://CENIPA/';
+set vPathImport     = 'lib://CENIPA/5.Import/';
+​
+​
+// Paths QVDS
+​
+set vPathExtract    = 'lib://CENIPA/2.QVD/1.Extract/';
+set vPathTransform  = 'lib://CENIPA/2.QVD/2.Transform/';
+set vPathLoad       = 'lib://CENIPA/2.QVD/3.Load/';
+​
+​

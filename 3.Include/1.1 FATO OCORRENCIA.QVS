@@ -1,0 +1,35 @@
+set vTableName = 'FATO_OCORRENCIA';
+set vFileNameOrigin = 'ocorrencia(1).csv';
+set vFileNameOutput = 'FATO_OCORRENCIA.QVD';
+
+$(vTableName):
+
+LOAD
+    codigo_ocorrencia,
+    codigo_ocorrencia1,
+    codigo_ocorrencia2,
+    codigo_ocorrencia3,
+    codigo_ocorrencia4,
+    ocorrencia_classificacao,
+    ocorrencia_latitude,
+    ocorrencia_longitude,
+    ocorrencia_cidade,
+    ocorrencia_uf,
+    ocorrencia_pais,
+    ocorrencia_aerodromo,
+    ocorrencia_dia,
+    ocorrencia_hora,
+    investigacao_aeronave_liberada,
+    investigacao_status,
+    divulgacao_relatorio_numero,
+    divulgacao_relatorio_publicado,
+    divulgacao_dia_publicacao,
+    total_recomendacoes,
+    total_aeronaves_envolvidas,
+    ocorrencia_saida_pista
+FROM [$(vPathImport)$(vFileNameOrigin)]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+
+STORE $(vTableName) into [$(vPathExtract)$(vFileNameOutput)];
+
+Drop Table $(vTableName);
